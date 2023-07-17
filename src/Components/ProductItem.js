@@ -2,30 +2,23 @@ export default function ProductItem({product}){
     
     return(
         <>
-            <div className="shadow-lg p-4 rounded-xl  border">
-                <div className="mb-4">
-                     <img src={product.image} alt={product.title} className="rounded-md" /> 
-                </div>
-                <div className="flex justify-between items-center">
-                    <div className="text-2xl font-bold">
-                        {product.title}
+            <div>
+                <div class="relative">
+                    <div class="relative h-72 w-full overflow-hidden rounded-lg">
+                        <img src={product.thumbnail} alt={product.title} class="h-full w-full object-cover object-center"/>
                     </div>
-                    <div className="text-gray-600">
-                        En stock {product.available ? "✅" : "❌"}
+                    <div class="relative mt-4 flex justify-between items-center">
+                        <h3 class="font-semibold text-sm  text-gray-900">{product.title}</h3>
+                        <p class="relative text-lg font-bold text-gray-900  rounded">{product.price}$</p>
+
                     </div>
-                    
-                </div>
-                <div className="flex justify-between items-center">
-                    <div className="text-green-500 font-bold text-2xl mt-3">
-                        <span className="text-5xl">{product.price}</span>
-                        <span>$</span>
+                   
+                    <div class="mt-4">
+                        <button class="relative bg-green-500 hover:bg-green-600 flex items-center justify-center rounded-md border border-transparent bg-gray-100  p-2 text-sm font-medium text-white ">Ajouter au panier</button>
                     </div>
-                    <button onClick={() => {}} type="button" className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
-                        Ajouter au panier
-                    </button>
                 </div>
-                
             </div>
+
         </>
     );
 }
